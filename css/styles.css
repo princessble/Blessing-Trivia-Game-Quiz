@@ -1,0 +1,100 @@
+/* Reset default styles and set background */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Main container for content */
+.container {
+    max-width: 800px;
+    height: 800px; /* Setting a fixed height */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #b03c3c;
+    box-shadow: 0 0 10px #82740c1a;
+    border-radius: 100px;
+    border-top: 10px solid #5cb85c; /* Green border on top */
+    border-spacing: 10px;
+}
+
+/* Center-align text in header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style footer with flexible layout */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    width: 100%; /* Occupy full width */
+}
+
+/* Emphasize feedback message */
+#feedback {
+    font-weight: bold;
+}
+
+/* Highlight score with bold text */
+#score {
+    font-weight: bold;
+}
+
+/* Button transitions on hover and styling for correct answer */
+#options button {
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Styling for correct answer button */
+#options button.correct {
+    background-color: #5cb85c; /* Green for correct answer */
+}
+
+/* Button transitions on hover and styling for incorrect answer */
+#options button.incorrect {
+    background-color: #d9534f; /* Red for incorrect answer */
+}
+
+/* Animation for fading in the quiz container */
+#quiz-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 500px) {
+    /* Adjust heading font size */
+    #heading {
+        font-size: 1.5em;
+    }
+
+    /* Adjust width for day-night section */
+    #day-night {
+        width: 90%;
+    }
+
+    /* Adjust font size for specific elements */
+    h5 {
+        font-size: 70%;
+    }
+
+    h4 {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+}
