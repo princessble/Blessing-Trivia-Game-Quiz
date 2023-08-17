@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blessing Trivia Quiz</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header: Display game title -->
+    <header>
+      <h1>Blessing Trivia Quiz Game</h1>
+    </header>
+    
+    <!-- Section for User Input and Starting the Quiz -->
+    <div id="username-container">
+      <!-- Input field to enter username -->
+      <input type="text" id="username" placeholder="Enter your username">
+      <!-- Button to start the quiz -->
+      <button id="start-button">Start Quiz</button>
+    </div>
+    
+    <!-- Section for Quiz Questions and Options -->
+    <div id="quiz-container" style="display: none;">
+      <!-- Display the current question -->
+      <div id="question"></div>
+      <!-- Display the answer options -->
+      <div id="options"></div>
+      <!-- Button to submit the quiz -->
+      <button id="submit-button" class="submit-button">Submit Quiz</button>
+    </div>
+    
+    <br>
+    
+    <!-- Section for Feedback and Displaying User Score -->
+    <div id="feedback"></div>
+    
+    <br>
+    
+    <!-- Display user's score -->
+    <div id="score">Score: <span id="score-value">0</span></div>
+    
+    <!-- Footer: Display attribution and information -->
+    <footer>
+      <p>&copy; 2023 Blessing Trivia Quiz Game</p>
+    </footer>
+  </div>
+  
+  <!-- JavaScript: Handling quiz logic -->
+  <script src="script.js"></script>
+</body>
+</html>
