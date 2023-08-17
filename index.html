@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for character set and viewport settings -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blessing Trivia Quiz</title>
+  
+  <!-- Link to external CSS file for styling -->
   <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Title of the webpage -->
+  <title>Blessing Trivia Quiz</title>
 </head>
 <body>
+  <!-- Container for the entire content -->
   <div class="container">
-    <!-- Header: Display game title -->
+    <!-- Header section with the quiz title -->
     <header>
       <h1>Blessing Trivia Quiz Game</h1>
     </header>
     
-    <!-- Section for User Input and Starting the Quiz -->
+    <!-- Container for the username input and start button -->
     <div id="username-container">
-      <!-- Input field to enter username -->
       <input type="text" id="username" placeholder="Enter your username">
-      <!-- Button to start the quiz -->
       <button id="start-button">Start Quiz</button>
     </div>
     
-    <!-- Section for Quiz Questions and Options -->
-    <div id="quiz-container" style="display: none;">
-      <!-- Display the current question -->
+    <!-- Container for the quiz questions and options -->
+    <div id="quiz-container">
+      <!-- Display area for the current question -->
       <div id="question"></div>
-      <!-- Display the answer options -->
+      
+      <!-- Display area for the answer options -->
       <div id="options"></div>
+      
       <!-- Button to submit the quiz -->
-      <button id="submit-button" class="submit-button">Submit Quiz</button>
+      <button id="submit-button" class="submit-button" style="display: none;">Submit Quiz</button>
     </div>
     
     <br>
     
-    <!-- Section for Feedback and Displaying User Score -->
+    <!-- Display area for providing feedback on user's answers -->
     <div id="feedback"></div>
     
     <br>
     
-    <!-- Display user's score -->
+    <!-- Display area for the user's current score -->
     <div id="score">Score: <span id="score-value">0</span></div>
     
-    <!-- Footer: Display attribution and information -->
+    <!-- Footer section with copyright information -->
     <footer>
       <p>&copy; 2023 Blessing Trivia Quiz Game</p>
     </footer>
+    
+    <!-- Link to external JavaScript file for scripting -->
+    <script src="script.js"></script>
   </div>
-  
-  <!-- JavaScript: Handling quiz logic -->
-  <script src="scrpit.js"></script>
 </body>
 </html>
