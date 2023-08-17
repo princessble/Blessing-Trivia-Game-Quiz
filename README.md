@@ -79,11 +79,31 @@ Here's a visual representation of how the game works:
 
 ## 📜 Game Rules
 
-1. Enter your username and click "Start Quiz" to begin.
-2. Answer the questions by clicking on the provided options.
-3. Receive instant feedback for each answer.
-4. Each correct answer earns you points, while incorrect answers earn no points.
-5. Complete the quiz and click the "Submit Quiz" button to see your final score.
+
+Getting Started:
+
+Enter your username and click the "Start Quiz" button to initiate the game.
+Answering Questions:
+
+Read each question carefully and choose your answer by clicking on the provided options.
+Immediate Feedback:
+
+Receive instant feedback after answering each question to know if your choice was correct. 🌟
+Earning Points:
+
+For every correct answer, you will earn points, contributing to your total score. 🏆
+Incorrect Answers:
+
+Incorrect answers do not earn points, but they provide valuable learning experiences. 🚀
+Restarting the Quiz:
+
+If you want to play again, click on "Restart Quiz" to reset and resume the quiz from the beginning. 🔄
+Final Score:
+
+Once you complete all the questions, you'll be able to view your final score. 🎉
+Enjoy the quiz, challenge yourself, and remember that each question is a chance to learn, grow, and have fun! 🎮
+
+
 
 ## 💻 Technologies
 
