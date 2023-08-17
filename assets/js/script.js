@@ -144,6 +144,7 @@ function checkAnswer(selectedIndex) {
     // Check if there are more questions to display
     if (currentQuestionIndex < questions.length) {
         displayQuestion();
+
     } else {
         // Display quiz completion message
         questionElement.textContent = "Quiz Completed!";
@@ -153,6 +154,7 @@ function checkAnswer(selectedIndex) {
 
 // Function to submit the quiz
 function submitQuiz() {
+
     // Calculate final score, display results, etc.
     // Customize this function based on your requirements
     // For now, let's display an alert with the final score
