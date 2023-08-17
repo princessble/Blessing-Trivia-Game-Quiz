@@ -166,3 +166,23 @@ document.getElementById("submit-button").addEventListener("click", submitQuiz);
 
 // Display the first question when the page loads
 displayQuestion();
+
+// Get references to elements
+const finalScoreElement = document.getElementById('finalScore');
+const restartButton = document.getElementById('restartButton');
+
+// Function to restart the quiz
+function restartQuiz() {
+    // Reset any necessary variables or states here
+    score = 0;
+    currentQuestionIndex = 0;
+
+    // Clear the final score display
+    finalScoreElement.textContent = '';
+
+    // Re-display the first question
+    displayQuestion();
+}
+
+// Event listener for the restart button
+restartButton.addEventListener('click', restartQuiz);
