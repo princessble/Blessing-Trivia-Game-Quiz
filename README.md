@@ -33,7 +33,7 @@ To participate in the quiz, simply visit the provided link: [Blessing Trivia Gam
 
 Here are some screenshots that showcase the responsive design of the Blessing Trivia Game Quiz:
 
-<img src="assets\image\3screen.png" alt="responsive views">
+<img src="assets\image\3screens.png" alt="responsive views">
 
 Feel free to explore the quiz on different devices to see how the user interface adapts!
 
