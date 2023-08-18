@@ -6,6 +6,7 @@ const optionsElement = document.getElementById("options");
 const scoreElement = document.getElementById("score-value");
 const feedbackElement = document.getElementById("feedback");
 
+
 // Initialize variables for tracking quiz progress and score
 let currentQuestionIndex = 0;
 let score = 0;
@@ -170,6 +171,7 @@ displayQuestion();
 // Get references to elements
 const finalScoreElement = document.getElementById('finalScore');
 const restartButton = document.getElementById('restartButton');
+
 
 // Function to restart the quiz
 function restartQuiz() {
