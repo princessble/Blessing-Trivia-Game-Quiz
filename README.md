@@ -1,29 +1,16 @@
 # Blessing Trivia Quiz Game 🎮
 
-Welcome to the Blessing Trivia Quiz Game! 
-Test your knowledge on a variety of topics,
-and challenge yourself to answer trivia questions correctly. 
-This interactive quiz game is designed to provide an engaging,
-and educational experience for players.
+Welcome to the Blessing Trivia Quiz Game! Test your knowledge on a variety of topics, and challenge yourself to answer trivia questions correctly. This interactive quiz game is designed to provide an engaging and educational experience for players.
 
 ## Responsive Design
 
-The user interface of Blessing Trivia Game Quiz has been,
-developed with responsiveness in mind. 
-This means that the layout and design of the quiz adapt,
-and adjust to different screen sizes, such as desktops, 
-tablets, and smartphones. 
-The responsiveness ensures that users can enjoy the quiz without any usability issues,
-regardless of the device they're using.
+The user interface of Blessing Trivia Game Quiz has been developed with responsiveness in mind. This means that the layout and design of the quiz adapt and adjust to different screen sizes, such as desktops, tablets, and smartphones. The responsiveness ensures that users can enjoy the quiz without any usability issues, regardless of the device they're using.
 
-To experience the responsive design firsthand, 
-you can visit the live version of,
-Blessing Trivia Game Quiz using the following link: 
-[Blessing Trivia Game Quiz](https://princessble.github.io/Blessing-Trivia-Game-Quiz/).
+### Responsive Device Checker
 
-Alternatively, you can also use the [Am I Responsive]
-(https://ui.dev/amiresponsive?url=https://princessble.github.io/Blessing-Trivia-Game-Quiz/) 
-tool to visualize how the quiz adapts to different screen sizes.
+To see how Blessing Trivia Game Quiz adapts to different screen sizes, you can use the [Am I Responsive](https://ui.dev/amiresponsive?url=https://princessble.github.io/Blessing-Trivia-Game-Quiz/) tool. This tool will help you visualize how the quiz looks on various devices.
+
+To experience the responsive design firsthand, you can also visit the live version of Blessing Trivia Game Quiz using the following link: [Blessing Trivia Game Quiz](https://princessble.github.io/Blessing-Trivia-Game-Quiz/).
 
 ## Usage
 
@@ -32,6 +19,9 @@ To participate in the quiz, simply visit the provided link: [Blessing Trivia Gam
 ## Screenshots
 
 Here are some screenshots that showcase the responsive design of the Blessing Trivia Game Quiz:
+<img src="" alt="">
+<img src="" alt="">
+<img src="" alt="">
 
 <img src="assets\image\3screens.png" alt="responsive views">
 
@@ -39,8 +29,6 @@ Feel free to explore the quiz on different devices to see how the user interface
 
 ---
 *For inquiries, contact [princessble](https://github.com/princessble).*
-
-
 
 
 ## 📋 Table of Contents
@@ -79,22 +67,17 @@ Here's a visual representation of how the game works:
 
 ## 📜 Game Rules
 
-
 Getting Started:
 
-Enter your username and click the "Start Quiz" 
-button to initiate the game.
+Enter your username and click the "Start Quiz" button to initiate the game.
 
 Answering Questions:
 
-Read each question carefully 
-and choose your answer by clicking on the provided options.
+Read each question carefully and choose your answer by clicking on the provided options.
 
 Immediate Feedback:
 
-Receive instant feedback after answering each question 
-to know if your choice was correct. 🌟
-
+Receive instant feedback after answering each question to know if your choice was correct. 🌟
 
 Earning Points:
 
@@ -102,23 +85,17 @@ For every correct answer, you will earn points, contributing to your total score
 
 Incorrect Answers:
 
-Incorrect answers do not earn points, 
-but they provide valuable learning experiences. 🚀
+Incorrect answers do not earn points, but they provide valuable learning experiences. 🚀
 
 Restarting the Quiz:
 
-If you want to play again, click on "Restart Quiz" to reset 
-and resume the quiz from the beginning. 🔄
+If you want to play again, click on "Restart Quiz" to reset and resume the quiz from the beginning. 🔄
 
 Final Score:
 
 Once you complete all the questions, you'll be able to view your final score. 🎉
 
-Enjoy the quiz, challenge yourself, 
-and remember that each question is a chance to learn, grow, 
-and have fun! 🎮
-
-
+Enjoy the quiz, challenge yourself, and remember that each question is a chance to learn, grow, and have fun! 🎮
 
 ## 💻 Technologies
 
@@ -155,7 +132,6 @@ To run this quiz game locally, follow these steps:
 
 git clone https://github.com/princessble/blessing-trivia-game.git
 
-
 2. Open the `index.html` file in your web browser to start the quiz.
 
 ## 🤝 Contributing
@@ -164,27 +140,16 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 ## 🙌 Acknowledgments
 
-Special thanks to my mentor Julia for her valuable mentoring sessions,
-and guidance throughout the development of this project.
-
-
+Special thanks to my mentor Julia for her valuable mentoring sessions, and guidance throughout the development of this project.
 
 I would also like to express my gratitude to the following:
 
-- **FontAwesome**: A huge thanks to FontAwesome for providing,
- the fantastic icons that enhance the visual appeal of this project.
-
-- **GitHub**: Many thanks to GitHub for hosting this project,
-and enabling collaborative development.
-
-- **Limerick ETB**: I am grateful to Limerick ETB for providing me,
- with this wonderful opportunity to learn and create.
-
-- **Code Institute**: Special thanks to Code Institute for offering a rich,
-and comprehensive curriculum that guided me in building this project.
+- **FontAwesome**: A huge thanks to FontAwesome for providing the fantastic icons that enhance the visual appeal of this project.
+- **GitHub**: Many thanks to GitHub for hosting this project, and enabling collaborative development.
+- **Limerick ETB**: I am grateful to Limerick ETB for providing me with this wonderful opportunity to learn and create.
+- **Code Institute**: Special thanks to Code Institute for offering a rich and comprehensive curriculum that guided me in building this project.
 
 Your contributions and support have been instrumental in making this project a reality.
-
 
 ## 📄 License
 
