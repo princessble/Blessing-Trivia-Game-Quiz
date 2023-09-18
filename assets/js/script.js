@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const scoreElement = document.getElementById("score-value");
     const feedbackElement = document.getElementById("feedback");
     const submitButton = document.getElementById("submit-button");
-    const finalScoreElement = document.getElementById("finalScore");
+    const finalScoreElement = document.getElementById("final-score");
     const restartButton = document.getElementById("restartButton");
   
     let currentQuestionIndex = 0;
@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         question: "2. Which planet is known as the 'Red Planet'?",
         options: ["Venus", "Mars", "Jupiter", "Saturn"],
-        correctAnswer: 1,
-      },
-      {
+        correctAnswer: 1
+    },
+    {
         question: "3. Which famous scientist developed the theory of general relativity?",
         options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
         correctAnswer: 1
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
         feedbackElement.textContent = "Incorrect!";
       }
   
-      scoreElement.textContent = score;
+      scoreElement.textContent = `Score: ${score}/${currentQuestionIndex + 1}`;
       currentQuestionIndex++;
   
       if (currentQuestionIndex < questions.length) {
