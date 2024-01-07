@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
        * For now, let's display the final score
        */
        function submitQuiz() {
-      finalScoreElement.textContent = `Your final score is: ${score}/${questions.length}`;
+      finalScoreElement.textContent = `Your final score is: ${score}`;
       submitButton.style.display = "none";
       restartButton.style.display = "block";
     }
