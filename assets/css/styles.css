@@ -56,13 +56,16 @@ footer {
 
 /* Styling for correct answer button */
 #options button.correct {
-    background-color: #5cb85c; /* Green for correct answer */
+    background-color: #4CAF50; /* Dark green for contrast on red background */
+    color: #ffffff; /* White text for contrast */
 }
 
-/* Button transitions on hover and styling for incorrect answer */
+/* Styling for incorrect answer button */
 #options button.incorrect {
-    background-color: #d9534f; /* Red for incorrect answer */
+    background-color: #FF5252; /* Dark red for contrast on red background */
+    color: #ffffff; /* White text for contrast */
 }
+
 
 /* Animation for fading in the quiz container */
 #quiz-container {
