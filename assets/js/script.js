@@ -95,6 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const username = document.getElementById("username").value;
       if (username.trim() !== "") {
         usernameContainer.style.display = "none";
+        quizContainer.classList.remove("hide"),
+        restartButton.classList.remove("hide"),
         displayQuestion();
       } else {
         // Display an error message or prompt the user to enter a valid username
