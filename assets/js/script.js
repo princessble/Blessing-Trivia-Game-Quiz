@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const elements = {
-    usernameContainer: document.getElementById("username-container"),
-    startButton: document.getElementById("start-button"),
-    quizContainer: document.getElementById("quiz-container"),
-    questionElement: document.getElementById("question"),
-    optionsElement: document.getElementById("options"),
-    finalScoreContainer: document.getElementById("final-score-container"),
-    finalScoreValue: document.getElementById("final-score-value"),
-    finalScoreElement: document.getElementById("final-score"),
-    restartButton: document.getElementById("restart-button"),
-  };
+  const usernameContainer = document.getElementById("username-container");
+  const startButton = document.getElementById("start-button");
+  const questionElement = document.getElementById("question");
+  const optionsElement = document.getElementById("options");
+  const finalScoreElementContainer = document.getElementById("final-score-container");
+  const scoreElement = document.getElementById("score-value");
+  const feedbackElement = document.getElementById("feedback");
+  const submitButton = document.getElementById("submit-button");
+  const finalScoreElement = document.getElementById("final-score");
+  const restartButton = document.getElementById("restartButton");
 
   let currentQuestionIndex = 0;
   let score = 0;
@@ -91,71 +90,82 @@ document.addEventListener("DOMContentLoaded", function () {
       correctAnswer: 0
     },
   ];
-];
 
-function startQuiz() {
-  const username = document.getElementById("username").value;
-  if (username.trim() !== "") {
-    elements.usernameContainer.style.display = "none";
-    elements.quizContainer.classList.remove("hide");
-    elements.restartButton.classList.remove("hide");
+  function startQuiz() {
+    const username = document.getElementById("username").value;
+    if (username.trim() !== "") {
+      usernameContainer.style.display = "none";
+      quizContainer.classList.remove("hide"),
+        restartButton.classList.remove("hide"),
+        displayQuestion();
+    } else {
+      // Display an error message or prompt the user to enter a valid username
+    }
+  }
+
+  function displayQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+    optionsElement.innerHTML = "";
+
+    currentQuestion.options.forEach((option, index) => {
+      const button = document.createElement("button");
+      button.textContent = option;
+      button.addEventListener("click", () => checkAnswer(index));
+      optionsElement.appendChild(button);
+    });
+  }
+
+  function checkAnswer(selectedIndex) {
+    const currentQuestion = questions[currentQuestionIndex];
+    if (selectedIndex === currentQuestion.correctAnswer) {
+      score++;
+      feedbackElement.textContent = "Correct!";
+    } else {
+      feedbackElement.textContent = "Incorrect!";
+    }
+
+    scoreElement.textContent = `Score: ${score}/${currentQuestionIndex + 1}`;
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+      displayQuestion();
+    } else {
+      endQuiz();
+    }
+  }
+
+  function endQuiz() {
+    questionElement.textContent = "Quiz Completed!";
+    optionsElement.innerHTML = "";
+    submitButton.style.display = "block";
+  }
+
+  /**
+   * Calculate final score, display results, etc.
+   * Customize this function based on your requirements
+   * For now, let's display the final score
+   */
+  function submitQuiz() {
+    finalScoreElementContainer.classList.remove("hide");
+    finalScoreElement.innerHTML = score;
+    submitButton.style.display = "none";
+    restartButton.style.display = "block";
+  }
+
+  function restartQuiz() {
+    finalScoreElementContainer.classList.add("hide");
+    score = 0;
+    currentQuestionIndex = 0;
+    finalScoreElement.textContent = "";
+    restartButton.style.display = "none";
     displayQuestion();
-  } else {
-    // Display an error message or prompt the user to enter a valid username
-  }
-}
-
-function displayQuestion() {
-  const currentQuestion = questions[currentQuestionIndex];
-  elements.questionElement.textContent = currentQuestion.question;
-  elements.optionsElement.innerHTML = "";
-
-  currentQuestion.options.forEach((option, index) => {
-    const button = document.createElement("button");
-    button.textContent = option;
-    button.addEventListener("click", () => checkAnswer(index));
-    elements.optionsElement.appendChild(button);
-  });
-}
-
-function checkAnswer(selectedIndex) {
-  const currentQuestion = questions[currentQuestionIndex];
-  if (selectedIndex === currentQuestion.correctAnswer) {
-    score++;
-    elements.feedbackElement.textContent = "Correct!";
-  } else {
-    elements.feedbackElement.textContent = "Incorrect!";
   }
 
-  elements.scoreValue.textContent = `Score: ${score}/${currentQuestionIndex + 1}`;
-  currentQuestionIndex++;
+  startButton.addEventListener("click", startQuiz);
+  submitButton.addEventListener("click", submitQuiz);
+  restartButton.addEventListener("click", restartQuiz);
 
-  if (currentQuestionIndex < questions.length) {
-    displayQuestion();
-  } else {
-    endQuiz();
-  }
-}
-
-function endQuiz() {
-  elements.questionElement.textContent = "Quiz Completed!";
-  elements.optionsElement.innerHTML = "";
-  elements.finalScoreContainer.classList.remove("hide");
-  elements.finalScoreValue.textContent = score;
-  elements.restartButton.style.display = "block";
-}
-
-function restartQuiz() {
-  elements.finalScoreContainer.classList.add("hide");
-  score = 0;
-  currentQuestionIndex = 0;
-  elements.finalScoreValue.textContent = "";
-  elements.restartButton.style.display = "none";
+  // Display the first question when the page loads
   displayQuestion();
-}
-
-elements.startButton.addEventListener("click", startQuiz); elements.restartButton.addEventListener("click", restartQuiz);
-
-// Display the first question when the page loads
-displayQuestion();
 });
