@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const startButton = document.getElementById("start-button");
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
-  const finalScoreElementContainer = document.getElementById("final-score-container");
   const scoreElement = document.getElementById("score-value");
   const feedbackElement = document.getElementById("feedback");
   const submitButton = document.getElementById("submit-button");
