@@ -1,5 +1,7 @@
 # Blessing Trivia Quiz Game 🎮
 
+
+
 Welcome to the Blessing Trivia Quiz Game! Test your knowledge on a variety of topics, and challenge yourself to answer trivia questions correctly. This interactive quiz game is designed to provide an engaging and educational experience for players.
 
 ## Responsive Design
