@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
   const finalScoreElementContainer = document.getElementById("final-score-container");
-  const scoreElement = document.getElementById("score-value");
+  const scoreElement = document.getElementById("finalScore-value");
   const feedbackElement = document.getElementById("feedback");
   const submitButton = document.getElementById("submit-button");
   const finalScoreElement = document.getElementById("final-score");
@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (username.trim() !== "") {
       usernameContainer.style.display = "none";
       quizContainer.classList.remove("hide"),
-        restartButton.classList.remove("hide"),
-        displayQuestion();
+      restartButton.classList.remove("hide"),
+      displayQuestion();
     } else {
       // Display an error message or prompt the user to enter a valid username
     }
