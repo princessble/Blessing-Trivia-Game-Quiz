@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     score = 0;
     currentQuestionIndex = 0;
     finalScoreElement.textContent = "";
-    restartButton.style.display = "none";
+    restartButton.style.display = "";
     displayQuestion();
   }
 
