@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const usernameContainer = document.getElementById("username-container");
   const startButton = document.getElementById("start-button");
+  const quizContainer = document.getElementById("quiz-container");
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
   const scoreElement = document.getElementById("score-value");
@@ -94,9 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const username = document.getElementById("username").value;
     if (username.trim() !== "") {
       usernameContainer.style.display = "none";
-      quizContainer.classList.remove("hide"),
-        restartButton.classList.remove("hide"),
-        displayQuestion();
+      quizContainer.classList.remove("hide");
+      restartButton.classList.remove("hide");
+      displayQuestion();
     } else {
       // Display an error message or prompt the user to enter a valid username
     }
@@ -140,11 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.style.display = "block";
   }
 
-  /**
-   * Calculate final score, display results, etc.
-   * Customize this function based on your requirements
-   * For now, let's display the final score
-   */
   function submitQuiz() {
     finalScoreElement.textContent = `Your final score is: ${score}`;
     submitButton.style.display = "none";
@@ -163,6 +159,5 @@ document.addEventListener("DOMContentLoaded", function () {
   submitButton.addEventListener("click", submitQuiz);
   restartButton.addEventListener("click", restartQuiz);
 
-  // Display the first question when the page loads
   displayQuestion();
 });
