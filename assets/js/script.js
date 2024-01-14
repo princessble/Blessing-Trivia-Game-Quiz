@@ -2,34 +2,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const elements = {
     usernameContainer: document.getElementById("username-container"),
     startButton: document.getElementById("start-button"),
+    quizContainer: document.getElementById("quiz-container"),
     questionElement: document.getElementById("question"),
     optionsElement: document.getElementById("options"),
-    finalScoreElementContainer: document.getElementById("final-score-container"),
-    scoreElement: document.getElementById("score-value"),
-    feedbackElement: document.getElementById("feedback"),
-    submitButton: document.getElementById("submit-button"),
+    finalScoreContainer: document.getElementById("final-score-container"),
+    finalScoreValue: document.getElementById("final-score-value"),
     finalScoreElement: document.getElementById("final-score"),
-    restartButton: document.getElementById("restartButton"),
+    restartButton: document.getElementById("restart-button"),
   };
 
   let currentQuestionIndex = 0;
   let score = 0;
 
-  const questions = [{
-      question: "1. What is the capital of France?",
-      options: ["Paris", "London", "Berlin", "Madrid"],
-      correctAnswer: 0,
-    },
-    // ... (rest of the questions)
+  const questions = [
+    // Add your questions here
   ];
 
   function startQuiz() {
     const username = document.getElementById("username").value;
     if (username.trim() !== "") {
       elements.usernameContainer.style.display = "none";
-      quizContainer.classList.remove("hide"),
-        restartButton.classList.remove("hide"),
-        displayQuestion();
+      elements.quizContainer.classList.remove("hide");
+      elements.restartButton.classList.remove("hide");
+      displayQuestion();
     } else {
       // Display an error message or prompt the user to enter a valid username
     }
@@ -57,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       elements.feedbackElement.textContent = "Incorrect!";
     }
 
-    elements.scoreElement.textContent = `Score: ${score}/${currentQuestionIndex + 1}`;
+    elements.scoreValue.textContent = `Score: ${score}/${currentQuestionIndex + 1}`;
     currentQuestionIndex++;
 
     if (currentQuestionIndex < questions.length) {
@@ -70,27 +65,21 @@ document.addEventListener("DOMContentLoaded", function () {
   function endQuiz() {
     elements.questionElement.textContent = "Quiz Completed!";
     elements.optionsElement.innerHTML = "";
-    elements.submitButton.style.display = "block";
-  }
-
-  function submitQuiz() {
-    elements.finalScoreElementContainer.classList.remove("hide");
-    elements.finalScoreElement.innerHTML = score;
-    elements.submitButton.style.display = "none";
+    elements.finalScoreContainer.classList.remove("hide");
+    elements.finalScoreValue.textContent = score;
     elements.restartButton.style.display = "block";
   }
 
   function restartQuiz() {
-    elements.finalScoreElementContainer.classList.add("hide");
+    elements.finalScoreContainer.classList.add("hide");
     score = 0;
     currentQuestionIndex = 0;
-    elements.finalScoreElement.textContent = "";
+    elements.finalScoreValue.textContent = "";
     elements.restartButton.style.display = "none";
     displayQuestion();
   }
 
   elements.startButton.addEventListener("click", startQuiz);
-  elements.submitButton.addEventListener("click", submitQuiz);
   elements.restartButton.addEventListener("click", restartQuiz);
 
   // Display the first question when the page loads
