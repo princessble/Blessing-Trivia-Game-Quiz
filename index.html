@@ -2,57 +2,39 @@
 <html lang="en">
 
 <head>
-  <!-- Meta tags for character set and viewport settings -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Blessing Fortune Nzeh">
   <meta name="keywords" content="trivia game, quiz, Blessing Trivia Game Quiz">
   <meta name="description"
     content="Welcome to the Blessing Trivia Game Quiz repository. Explore and enjoy this exciting trivia game, brought to you by Blessing Fortune Nzeh. Test your knowledge and have fun!">
-
-  <!-- Link to external CSS file for styling -->
   <link rel="stylesheet" href="assets/css/styles.css">
-
-  <!-- Title of the webpage -->
   <title>Blessing Trivia Quiz</title>
 </head>
 
 <body>
-  <!-- Container for the entire content -->
   <div class="container">
-    <!-- Header section with the quiz title -->
     <header>
       <h1>Blessing Trivia Quiz Game</h1>
     </header>
 
-    <!-- Container for the username input and start button -->
     <div id="username-container">
       <input type="text" id="username" placeholder="Enter your username">
       <button id="start-button">Start Quiz</button>
     </div>
 
-    <!-- Container for the quiz questions and options -->
     <div id="quiz-container" class="hide">
-      <!-- Display area for the current question -->
       <div id="question"></div>
-
-      <!-- Display area for the answer options -->
       <div id="options"></div>
-
-      <!-- Display the final result of the quiz -->
-      <p id="final-score-container" class="hide">Your final score is: <span id="finalScore-value"></span></p>
+      <p id="final-score-container" class="hide">Your final score is: <span id="final-score-value"></span></p>
       <div id="final-score" class="hide"></div>
-
-      <!-- Restart button -->
-      <button id="restartButton" class="hide">Restart Quiz</button>
+      <button id="restart-button" class="hide">Restart Quiz</button>
     </div>
 
-    <!-- Footer section with copyright information -->
     <footer>
       <p>&copy; 2023 Blessing Trivia Quiz Game</p>
     </footer>
 
-    <!-- Link to external JavaScript file for scripting -->
     <script src="assets/js/script.js"></script>
   </div>
 </body>
