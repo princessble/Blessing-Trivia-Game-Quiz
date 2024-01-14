@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const startButton = document.getElementById("start-button");
     const questionElement = document.getElementById("question");
     const optionsElement = document.getElementById("options");
+    const finalScoreElementContainer = document.getElementById("final-score-container");
     const scoreElement = document.getElementById("score-value");
     const feedbackElement = document.getElementById("feedback");
     const submitButton = document.getElementById("submit-button");
@@ -141,18 +142,20 @@ document.addEventListener("DOMContentLoaded", function () {
       submitButton.style.display = "block";
     }
   
-      /**
-       * Calculate final score, display results, etc.
-       * Customize this function based on your requirements
-       * For now, let's display the final score
-       */
-       function submitQuiz() {
-      finalScoreElement.textContent = `Your final score is: ${score}`;
+    /**
+     * Calculate final score, display results, etc.
+     * Customize this function based on your requirements
+     * For now, let's display the final score
+     */
+    function submitQuiz() {
+      finalScoreElementContainer.classList.remove("hide");
+      finalScoreElement.innerHTML = score;
       submitButton.style.display = "none";
       restartButton.style.display = "block";
     }
   
     function restartQuiz() {
+      finalScoreElementContainer.classList.add("hide");
       score = 0;
       currentQuestionIndex = 0;
       finalScoreElement.textContent = "";
