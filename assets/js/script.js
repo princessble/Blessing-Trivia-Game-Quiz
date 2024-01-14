@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const username = document.getElementById("username").value;
     if (username.trim() !== "") {
       usernameContainer.style.display = "none";
-      quizContainer.classList.remove(""),
+      quizContainer.classList.remove("hide"),
         restartButton.classList.remove("hide"),
         displayQuestion();
     } else {
@@ -147,18 +147,18 @@ document.addEventListener("DOMContentLoaded", function () {
    * For now, let's display the final score
    */
   function submitQuiz() {
-    finalScoreElementContainer.classList.remove("");
+    finalScoreElementContainer.classList.remove("hide");
     finalScoreElement.innerHTML = score;
     submitButton.style.display = "none";
     restartButton.style.display = "block";
   }
 
   function restartQuiz() {
-    finalScoreElementContainer.classList.add("");
+    finalScoreElementContainer.classList.add("hide");
     score = 0;
     currentQuestionIndex = 0;
-    finalScoreElement.textContent = "";
-    restartButton.style.display = "";
+    finalScoreElement.textContent = "hide";
+    restartButton.style.display = "hide";
     displayQuestion();
   }
 
