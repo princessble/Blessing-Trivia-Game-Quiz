@@ -12,13 +12,15 @@
 /* Main container for content */
 .container {
     max-width: 800px;
-    height: 800px; /* Setting a fixed height */
+    height: 800px;
+    /* Setting a fixed height */
     margin: 0 auto;
     padding: 20px;
     background-color: #b03c3c;
     box-shadow: 0 0 10px #82740c1a;
     border-radius: 100px;
-    border-top: 10px solid #5cb85c; /* Green border on top */
+    border-top: 10px solid #5cb85c;
+    /* Green border on top */
     border-spacing: 10px;
 }
 
@@ -36,7 +38,8 @@ footer {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid #ccc;
-    width: 100%; /* Occupy full width */
+    width: 100%;
+    /* Occupy full width */
 }
 
 /* Emphasize feedback message */
@@ -56,12 +59,12 @@ footer {
 
 /* Styling for correct answer button */
 #options button.correct {
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 /* Styling for incorrect answer button */
 #options button.incorrect {
-    color: #161414; 
+    color: #161414;
 }
 
 
@@ -76,14 +79,20 @@ footer {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+.hide {
+    display: none
+}
+
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 500px) {
+
     /* Adjust heading font size */
     #heading {
         font-size: 1.5em;
@@ -104,4 +113,3 @@ footer {
         font-size: 0.8em;
     }
 }
-
