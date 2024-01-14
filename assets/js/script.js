@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
     displayQuestion();
   }
 
-  startButton.addEventListener("click", startQuiz);
+  elements.startButton.addEventListener("click", startQuiz);
   submitButton.addEventListener("click", submitQuiz);
   restartButton.addEventListener("click", restartQuiz);
 
