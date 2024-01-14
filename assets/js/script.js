@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
    * For now, let's display the final score
    */
   function submitQuiz() {
-    finalScoreElementContainer.classList.remove("hide");
+    finalScoreElementContainer.classList.add("hide");
     finalScoreElement.innerHTML = score;
     submitButton.style.display = "none";
     restartButton.style.display = "block";
