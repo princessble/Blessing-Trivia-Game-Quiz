@@ -1,4 +1,3 @@
-/* Reset default styles and set background */
 *,
 *::before,
 *::after {
@@ -7,7 +6,12 @@
     box-sizing: border-box;
 }
 
-/* Main container for content */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -19,13 +23,11 @@
     margin-top: 20px;
 }
 
-/* Center-align text in header */
 header {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Style footer with flexible layout */
 footer {
     display: flex;
     justify-content: space-between;
@@ -33,37 +35,30 @@ footer {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid #ccc;
-    width: 100%;
 }
 
-/* Emphasize feedback message */
 #feedback {
     font-weight: bold;
 }
 
-/* Highlight score with bold text */
 #score-value {
     font-weight: bold;
 }
 
-/* Button transitions on hover and styling for correct answer */
 #options button {
     transition: background-color 0.3s ease-in-out;
 }
 
-/* Styling for correct answer button */
 #options button.correct {
     color: #ffffff;
     background-color: #5cb85c;
 }
 
-/* Styling for incorrect answer button */
 #options button.incorrect {
     color: #161414;
     background-color: #b03c3c;
 }
 
-/* Animation for fading in the quiz container */
 #quiz-container {
     animation: fadeIn 1s ease-in-out;
 }
@@ -80,15 +75,15 @@ footer {
     }
 }
 
-/* Responsive adjustments for smaller screens */
-@media screen and (max-width: 500px) {
+.hide {
+    display: none;
+}
 
-    /* Adjust heading font size */
+@media screen and (max-width: 500px) {
     h1 {
         font-size: 1.5em;
     }
 
-    /* Adjust font size for specific elements */
     h4 {
         padding: 10px;
         font-size: 0.8em;
