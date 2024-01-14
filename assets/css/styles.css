@@ -1,3 +1,4 @@
+/* Reset default styles and set background */
 *,
 *::before,
 *::after {
@@ -6,28 +7,30 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-}
 
+
+/* Main container for content */
 .container {
     max-width: 800px;
+    height: 800px;
+    /* Setting a fixed height */
     margin: 0 auto;
     padding: 20px;
     background-color: #b03c3c;
     box-shadow: 0 0 10px #82740c1a;
-    border-radius: 20px;
+    border-radius: 100px;
     border-top: 10px solid #5cb85c;
-    margin-top: 20px;
+    /* Green border on top */
+    border-spacing: 10px;
 }
 
+/* Center-align text in header */
 header {
     text-align: center;
     margin-bottom: 20px;
 }
 
+/* Style footer with flexible layout */
 footer {
     display: flex;
     justify-content: space-between;
@@ -35,30 +38,38 @@ footer {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid #ccc;
+    width: 100%;
+    /* Occupy full width */
 }
 
+/* Emphasize feedback message */
 #feedback {
     font-weight: bold;
 }
 
-#score-value {
+/* Highlight score with bold text */
+#score {
     font-weight: bold;
 }
 
+/* Button transitions on hover and styling for correct answer */
 #options button {
     transition: background-color 0.3s ease-in-out;
 }
 
+/* Styling for correct answer button */
 #options button.correct {
     color: #ffffff;
-    background-color: #5cb85c;
 }
 
+/* Styling for incorrect answer button */
 #options button.incorrect {
     color: #161414;
-    background-color: #b03c3c;
 }
 
+
+
+/* Animation for fading in the quiz container */
 #quiz-container {
     animation: fadeIn 1s ease-in-out;
 }
@@ -76,12 +87,25 @@ footer {
 }
 
 .hide {
-    display: none;
+    display: none
 }
 
+/* Responsive adjustments for smaller screens */
 @media screen and (max-width: 500px) {
-    h1 {
+
+    /* Adjust heading font size */
+    #heading {
         font-size: 1.5em;
+    }
+
+    /* Adjust width for day-night section */
+    #day-night {
+        width: 90%;
+    }
+
+    /* Adjust font size for specific elements */
+    h5 {
+        font-size: 70%;
     }
 
     h4 {
