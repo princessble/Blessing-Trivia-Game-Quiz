@@ -163,8 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   elements.startButton.addEventListener("click", startQuiz);
-  submitButton.addEventListener("click", submitQuiz);
-  restartButton.addEventListener("click", restartQuiz);
+  elements.submitButton.addEventListener("click", submitQuiz);
+  elements.restartButton.addEventListener("click", restartQuiz);
 
   // Display the first question when the page loads
   displayQuestion();
