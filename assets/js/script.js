@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   const usernameContainer = document.getElementById("username-container");
   const startButton = document.getElementById("start-button");
-  const quizContainer = document.getElementById("quiz-container");
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
+  const finalScoreElementContainer = document.getElementById("final-score-container");
   const scoreElement = document.getElementById("score-value");
   const feedbackElement = document.getElementById("feedback");
   const submitButton = document.getElementById("submit-button");
-  const finalScoreElement = document.getElementById("final-score-value");
+  const finalScoreElement = document.getElementById("final-score");
   const restartButton = document.getElementById("restartButton");
 
   let currentQuestionIndex = 0;
@@ -101,18 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // Display an error message or prompt the user to enter a valid username
     }
-  };
-
-  function startQuiz() {
-    const username = document.getElementById("username").value;
-    if (username.trim() !== "") {
-      usernameContainer.style.display = "none";
-      quizContainer.classList.remove("hide");
-      restartButton.classList.remove("hide");
-      displayQuestion();
-    } else {
-      // Display an error message or prompt the user to enter a valid username
-    }
   }
 
   function displayQuestion() {
@@ -153,13 +141,20 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.style.display = "block";
   }
 
+  /**
+   * Calculate final score, display results, etc.
+   * Customize this function based on your requirements
+   * For now, let's display the final score
+   */
   function submitQuiz() {
-    finalScoreElement.textContent = `Your final score is: ${score}`;
+    finalScoreElementContainer.classList.remove("hide");
+    finalScoreElement.innerHTML = score;
     submitButton.style.display = "none";
     restartButton.style.display = "block";
   }
 
   function restartQuiz() {
+    finalScoreElementContainer.classList.add("hide");
     score = 0;
     currentQuestionIndex = 0;
     finalScoreElement.textContent = "";
@@ -171,5 +166,6 @@ document.addEventListener("DOMContentLoaded", function () {
   submitButton.addEventListener("click", submitQuiz);
   restartButton.addEventListener("click", restartQuiz);
 
+  // Display the first question when the page loads
   displayQuestion();
 });
