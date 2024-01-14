@@ -7,21 +7,16 @@
     box-sizing: border-box;
 }
 
-
-
 /* Main container for content */
 .container {
     max-width: 800px;
-    height: 800px;
-    /* Setting a fixed height */
     margin: 0 auto;
     padding: 20px;
     background-color: #b03c3c;
     box-shadow: 0 0 10px #82740c1a;
-    border-radius: 100px;
+    border-radius: 20px;
     border-top: 10px solid #5cb85c;
-    /* Green border on top */
-    border-spacing: 10px;
+    margin-top: 20px;
 }
 
 /* Center-align text in header */
@@ -39,7 +34,6 @@ footer {
     padding-top: 20px;
     border-top: 1px solid #ccc;
     width: 100%;
-    /* Occupy full width */
 }
 
 /* Emphasize feedback message */
@@ -48,7 +42,7 @@ footer {
 }
 
 /* Highlight score with bold text */
-#score {
+#score-value {
     font-weight: bold;
 }
 
@@ -60,14 +54,14 @@ footer {
 /* Styling for correct answer button */
 #options button.correct {
     color: #ffffff;
+    background-color: #5cb85c;
 }
 
 /* Styling for incorrect answer button */
 #options button.incorrect {
     color: #161414;
+    background-color: #b03c3c;
 }
-
-
 
 /* Animation for fading in the quiz container */
 #quiz-container {
@@ -86,28 +80,15 @@ footer {
     }
 }
 
-.hide {
-    display: none
-}
-
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 500px) {
 
     /* Adjust heading font size */
-    #heading {
+    h1 {
         font-size: 1.5em;
     }
 
-    /* Adjust width for day-night section */
-    #day-night {
-        width: 90%;
-    }
-
     /* Adjust font size for specific elements */
-    h5 {
-        font-size: 70%;
-    }
-
     h4 {
         padding: 10px;
         font-size: 0.8em;
