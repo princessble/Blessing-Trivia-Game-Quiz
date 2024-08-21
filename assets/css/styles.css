@@ -1,4 +1,4 @@
-/* Reset default styles and set background */
+/* Reset default styles */
 *,
 *::before,
 *::after {
@@ -7,61 +7,65 @@
     box-sizing: border-box;
 }
 
-/* Main container for content */
+/* Main container styling */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 2rem auto;
     padding: 20px;
-    background-color: #b03c3c;
-    box-shadow: 0 0 10px #82740c1a;
-    border-radius: 20px;
-    border-top: 5px solid #5cb85c;
-    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Center-align text in header */
+/* Header styling */
 header {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Style footer with flexible layout */
-footer {
+header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+/* Username container styling */
+#username-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Emphasize feedback message */
-#feedback {
-    font-weight: bold;
+/* Input styling */
+#username {
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
 }
 
-/* Highlight score with bold text */
-#score {
-    font-weight: bold;
+/* Button styling */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* Button transitions on hover and styling for correct answer */
-#options button {
-    transition: background-color 0.3s ease-in-out;
+button:hover {
+    background-color: #4cae4c;
 }
 
-/* Styling for correct answer button */
-#options button.correct {
-    color: #ffffff;
-}
-
-/* Styling for incorrect answer button */
-#options button.incorrect {
-    color: #161414;
-}
-
-/* Animation for fading in the quiz container */
+/* Quiz container styling */
 #quiz-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -77,6 +81,37 @@ footer {
     }
 }
 
+/* Option buttons styling */
+#options button {
+    background-color: #ddd;
+    color: #333;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: 2px solid transparent;
+}
+
+#options button.correct {
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+#options button.incorrect {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+/* Feedback and score styling */
+#feedback {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#final-score-container {
+    text-align: center;
+}
+
 .hide {
     display: none;
 }
@@ -84,10 +119,18 @@ footer {
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 500px) {
     .container {
-        padding: 10px;
+        padding: 15px;
     }
 
     header h1 {
         font-size: 1.5em;
+    }
+
+    #username {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 1em;
     }
 }
