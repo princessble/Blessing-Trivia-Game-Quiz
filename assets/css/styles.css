@@ -7,130 +7,177 @@
     box-sizing: border-box;
 }
 
-/* Main container styling */
-.container {
-    max-width: 600px;
-    margin: 2rem auto;
+/* Set the background color to red and make sure the body takes up the full height */
+body {
+    background-color: #ff0000;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Header styling */
-header {
+/* Main container for the quiz content */
+.container {
+    max-width: 600px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
     text-align: center;
+}
+
+/* Header styling for the quiz title */
+header {
     margin-bottom: 20px;
 }
 
 header h1 {
     font-size: 2em;
-    color: #333;
+    color: #333333;
 }
 
-/* Username container styling */
+/* Styling for the username container */
 #username-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
+    margin-bottom: 20px;
 }
 
-/* Input styling */
-#username {
+#username-container input {
+    width: calc(100% - 10px);
     padding: 10px;
-    border: 2px solid #333;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    width: 100%;
-    max-width: 300px;
+    font-size: 1em;
 }
 
-/* Button styling */
-button {
-    padding: 10px 20px;
+#start-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #ffffff;
     border: none;
     border-radius: 5px;
-    background-color: #5cb85c;
-    color: #fff;
+    font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #4cae4c;
+#start-button:hover {
+    background-color: #45a049;
 }
 
-/* Quiz container styling */
+/* Hide elements using the .hide class */
+.hide {
+    display: none;
+}
+
+/* Styling for the quiz container */
 #quiz-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    animation: fadeIn 1s ease-in-out;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Styling for the quiz questions */
+#question {
+    font-size: 1.5em;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Styling for the options */
+#options button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#options button:hover {
+    background-color: #e6e6e6;
+}
+
+/* Correct and incorrect answer button styles */
+#options button.correct {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+#options button.incorrect {
+    background-color: #f44336;
+    color: #ffffff;
+}
+
+/* Styling for the final score container */
+#final-score-container {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+#finalScore-value {
+    font-weight: bold;
+}
+
+/* Styling for the restart button */
+#restart-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff9800;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#restart-button:hover {
+    background-color: #e68a00;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666666;
+}
+
+/* Animation for fading in the quiz container */
 @keyframes fadeIn {
-    0% {
+    from {
         opacity: 0;
         transform: translateY(20px);
     }
 
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Option buttons styling */
-#options button {
-    background-color: #ddd;
-    color: #333;
-    width: 100%;
-    text-align: left;
-    padding: 10px;
-    border: 2px solid transparent;
-}
-
-#options button.correct {
-    background-color: #5cb85c;
-    color: #fff;
-}
-
-#options button.incorrect {
-    background-color: #d9534f;
-    color: #fff;
-}
-
-/* Feedback and score styling */
-#feedback {
-    font-weight: bold;
-    margin-top: 10px;
-    text-align: center;
-}
-
-#final-score-container {
-    text-align: center;
-}
-
-.hide {
-    display: none;
-}
-
 /* Responsive adjustments for smaller screens */
 @media screen and (max-width: 500px) {
-    .container {
-        padding: 15px;
-    }
-
     header h1 {
         font-size: 1.5em;
     }
 
-    #username {
-        font-size: 1em;
+    #start-button,
+    #restart-button {
+        padding: 10px;
+        font-size: 0.9em;
     }
 
-    button {
-        font-size: 1em;
+    #options button {
+        padding: 8px;
+        font-size: 0.9em;
     }
 }
