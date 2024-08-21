@@ -1,107 +1,45 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const usernameContainer = document.getElementById("username-container");
   const startButton = document.getElementById("start-button");
+  const quizContainer = document.getElementById("quiz-container");
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
-  const finalScoreElementContainer = document.getElementById("final-score-container");
-  const scoreElement = document.getElementById("finalScore-value");
   const feedbackElement = document.getElementById("feedback");
-  const submitButton = document.getElementById("submit-button");
-  const finalScoreElement = document.getElementById("final-score");
-  const restartButton = document.getElementById("restartButton");
+  const finalScoreContainer = document.getElementById("final-score-container");
+  const finalScoreValue = document.getElementById("finalScore-value");
+  const restartButton = document.getElementById("restart-button");
 
   let currentQuestionIndex = 0;
   let score = 0;
 
   const questions = [{
-      question: "1. What is the capital of France?",
+      question: "What is the capital of France?",
       options: ["Paris", "London", "Berlin", "Madrid"],
       correctAnswer: 0,
     },
     {
-      question: "2. Which planet is known as the 'Red Planet'?",
+      question: "Which planet is known as the 'Red Planet'?",
       options: ["Venus", "Mars", "Jupiter", "Saturn"],
-      correctAnswer: 1
+      correctAnswer: 1,
     },
     {
-      question: "3. Which famous scientist developed the theory of general relativity?",
+      question: "Which famous scientist developed the theory of general relativity?",
       options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
-      correctAnswer: 1
+      correctAnswer: 1,
     },
-    {
-      question: "4. What is the largest mammal on Earth?",
-      options: ["Blue Whale", "Elephant", "Giraffe", "Lion"],
-      correctAnswer: 0
-    },
-    {
-      question: "5. Which country is known as the 'Land of the Rising Sun'?",
-      options: ["China", "Japan", "South Korea", "Thailand"],
-      correctAnswer: 1
-    },
-    {
-      question: "6. Which famous artist painted the Mona Lisa?",
-      options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Michelangelo"],
-      correctAnswer: 1
-    },
-    {
-      question: "7. What is the chemical symbol for gold?",
-      options: ["Au", "Ag", "G", "Go"],
-      correctAnswer: 0
-    },
-    {
-      question: "8. Which famous playwright wrote 'Romeo and Juliet'?",
-      options: ["William Shakespeare", "George Orwell", "Charles Dickens", "Jane Austen"],
-      correctAnswer: 0
-    },
-    {
-      question: "9. What is the largest planet in our solar system?",
-      options: ["Venus", "Mars", "Jupiter", "Saturn"],
-      correctAnswer: 2
-    },
-    {
-      question: "10. Which animal is known as the 'King of the Jungle'?",
-      options: ["Lion", "Tiger", "Elephant", "Giraffe"],
-      correctAnswer: 0
-    },
-
-    {
-      question: "11. Which gas do plants use for photosynthesis?",
-      options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
-      correctAnswer: 1
-    },
-    {
-      question: "12. In which year did the Titanic sink?",
-      options: ["1905", "1912", "1921", "1930"],
-      correctAnswer: 1
-    },
-    {
-      question: "13. What is the largest species of shark?",
-      options: ["Hammerhead Shark", "Great White Shark", "Tiger Shark", "Bull Shark"],
-      correctAnswer: 1
-    },
-    {
-      question: "14. Which planet is known as the 'Morning Star' or 'Evening Star'?",
-      options: ["Venus", "Mars", "Mercury", "Saturn"],
-      correctAnswer: 0
-    },
-    {
-      question: "15. Who wrote the novel 'Pride and Prejudice'?",
-      options: ["Jane Austen", "Emily Brontë", "Charlotte Brontë", "Agatha Christie"],
-      correctAnswer: 0
-    },
+    // Add more questions as needed...
   ];
 
-  function startQuiz() {
-    const username = document.getElementById("username").value;
-    if (username.trim() !== "") {
-      usernameContainer.style.display = "none";
-      quizContainer.classList.remove("hide"),
-      restartButton.classList.remove("hide"),
+  startButton.addEventListener("click", () => {
+    const username = document.getElementById("username").value.trim();
+    if (username) {
+      usernameContainer.classList.add("hide");
+      quizContainer.classList.remove("hide");
       displayQuestion();
     } else {
-      // Display an error message or prompt the user to enter a valid username
+      alert("Please enter a valid username to start the quiz.");
     }
-  }
+  });
 
   function displayQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
@@ -118,54 +56,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function checkAnswer(selectedIndex) {
     const currentQuestion = questions[currentQuestionIndex];
+    const buttons = optionsElement.querySelectorAll("button");
+
     if (selectedIndex === currentQuestion.correctAnswer) {
+      buttons[selectedIndex].classList.add("correct");
       score++;
       feedbackElement.textContent = "Correct!";
     } else {
+      buttons[selectedIndex].classList.add("incorrect");
+      buttons[currentQuestion.correctAnswer].classList.add("correct");
       feedbackElement.textContent = "Incorrect!";
     }
 
-    scoreElement.textContent = `Score: ${score}/${currentQuestionIndex + 1}`;
-    currentQuestionIndex++;
-
-    if (currentQuestionIndex < questions.length) {
-      displayQuestion();
-    } else {
-      endQuiz();
-    }
+    setTimeout(() => {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+      } else {
+        endQuiz();
+      }
+      feedbackElement.textContent = "";
+    }, 1000);
   }
 
   function endQuiz() {
     questionElement.textContent = "Quiz Completed!";
     optionsElement.innerHTML = "";
-    submitButton.style.display = "block";
+    finalScoreValue.textContent = `${score}/${questions.length}`;
+    finalScoreContainer.classList.remove("hide");
   }
 
-  /**
-   * Calculate final score, display results, etc.
-   * Customize this function based on your requirements
-   * For now, let's display the final score
-   */
-  function submitQuiz() {
-    finalScoreElementContainer.classList.remove("hide");
-    finalScoreElement.innerHTML = score;
-    submitButton.style.display = "none";
-    restartButton.style.display = "block";
-  }
-
-  function restartQuiz() {
-    finalScoreElementContainer.classList.add("hide");
-    score = 0;
+  restartButton.addEventListener("click", () => {
     currentQuestionIndex = 0;
-    finalScoreElement.textContent = "";
-    restartButton.style.display = "none";
+    score = 0;
+    finalScoreContainer.classList.add("hide");
+    quizContainer.classList.remove("hide");
     displayQuestion();
-  }
+  });
 
-  startButton.addEventListener("click", startQuiz);
-  submitButton.addEventListener("click", submitQuiz);
-  restartButton.addEventListener("click", restartQuiz);
-
-  // Display the first question when the page loads
+  // Display the first question on page load
   displayQuestion();
 });
