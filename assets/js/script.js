@@ -65,19 +65,22 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  // Start the quiz
+  // Function to start the quiz
   startButton.addEventListener("click", () => {
     const username = document.getElementById("username").value.trim();
     if (username) {
+      // Hide the username container and start button
       usernameContainer.classList.add("hide");
+      // Show the quiz container
       quizContainer.classList.remove("hide");
+      // Display the first question
       displayQuestion();
     } else {
       alert("Please enter a valid username to start the quiz.");
     }
   });
 
-  // Display the current question
+  // Function to display the current question
   function displayQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
@@ -91,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Check the selected answer
+  // Function to check the selected answer
   function checkAnswer(selectedIndex) {
     const currentQuestion = questions[currentQuestionIndex];
     const buttons = optionsElement.querySelectorAll("button");
@@ -117,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
-  // End the quiz
+  // Function to end the quiz
   function endQuiz() {
     questionElement.textContent = "Quiz Completed!";
     optionsElement.innerHTML = "";
@@ -125,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     finalScoreContainer.classList.remove("hide");
   }
 
-  // Restart the quiz
+  // Function to restart the quiz
   restartButton.addEventListener("click", () => {
     currentQuestionIndex = 0;
     score = 0;
@@ -134,6 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
     displayQuestion();
   });
 
-  // Display the first question on page load
+  // Display the first question on page load (optional)
   displayQuestion();
 });
