@@ -12,24 +12,60 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentQuestionIndex = 0;
   let score = 0;
 
+  // Array of trivia questions
   const questions = [{
-      question: "What is the capital of France?",
-      options: ["Paris", "London", "Berlin", "Madrid"],
+      question: "What is the capital city of Japan?",
+      options: ["Beijing", "Seoul", "Tokyo", "Bangkok"],
+      correctAnswer: 2,
+    },
+    {
+      question: "Which planet is closest to the Sun?",
+      options: ["Earth", "Mars", "Mercury", "Venus"],
+      correctAnswer: 2,
+    },
+    {
+      question: "In which year did World War II end?",
+      options: ["1942", "1945", "1939", "1948"],
+      correctAnswer: 1,
+    },
+    {
+      question: "Which element has the chemical symbol 'O'?",
+      options: ["Oxygen", "Osmium", "Oganesson", "Ozone"],
       correctAnswer: 0,
     },
     {
-      question: "Which planet is known as the 'Red Planet'?",
-      options: ["Venus", "Mars", "Jupiter", "Saturn"],
+      question: "What is the tallest mountain in the world?",
+      options: ["K2", "Kangchenjunga", "Mount Everest", "Lhotse"],
+      correctAnswer: 2,
+    },
+    {
+      question: "Who wrote the play 'Hamlet'?",
+      options: ["Charles Dickens", "Jane Austen", "William Shakespeare", "Leo Tolstoy"],
+      correctAnswer: 2,
+    },
+    {
+      question: "Which country hosted the 2016 Summer Olympics?",
+      options: ["China", "Brazil", "Greece", "Japan"],
       correctAnswer: 1,
     },
     {
-      question: "Which famous scientist developed the theory of general relativity?",
-      options: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Stephen Hawking"],
+      question: "What is the largest ocean on Earth?",
+      options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      correctAnswer: 3,
+    },
+    {
+      question: "Which scientist is known for the theory of evolution?",
+      options: ["Albert Einstein", "Charles Darwin", "Isaac Newton", "Galileo Galilei"],
       correctAnswer: 1,
     },
-    // Add more questions as needed...
+    {
+      question: "Which country is famous for the Great Wall?",
+      options: ["India", "China", "Egypt", "Mexico"],
+      correctAnswer: 1,
+    },
   ];
 
+  // Start the quiz
   startButton.addEventListener("click", () => {
     const username = document.getElementById("username").value.trim();
     if (username) {
@@ -41,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Display the current question
   function displayQuestion() {
     const currentQuestion = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
@@ -54,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Check the selected answer
   function checkAnswer(selectedIndex) {
     const currentQuestion = questions[currentQuestionIndex];
     const buttons = optionsElement.querySelectorAll("button");
@@ -79,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   }
 
+  // End the quiz
   function endQuiz() {
     questionElement.textContent = "Quiz Completed!";
     optionsElement.innerHTML = "";
@@ -86,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     finalScoreContainer.classList.remove("hide");
   }
 
+  // Restart the quiz
   restartButton.addEventListener("click", () => {
     currentQuestionIndex = 0;
     score = 0;
