@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const quizContainer = document.getElementById("quiz-container");
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
+  const feedbackElement = document.getElementById("feedback");
   const finalScoreContainer = document.getElementById("final-score-container");
   const finalScoreElement = document.getElementById("final-score");
   let currentQuestionIndex = 0;
@@ -65,6 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function startQuiz() {
     usernameContainer.style.display = "none";
     quizContainer.style.display = "block";
+    currentQuestionIndex = 0;
+    score = 0;
     displayQuestion();
   }
 
@@ -72,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentQuestion = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
     optionsElement.innerHTML = "";
+    feedbackElement.style.display = "none"; // Hide feedback initially
 
     currentQuestion.options.forEach((option, index) => {
       const button = document.createElement("button");
@@ -83,29 +87,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function checkAnswer(selectedIndex) {
     const currentQuestion = questions[currentQuestionIndex];
+    feedbackElement.style.display = "block";
     if (selectedIndex === currentQuestion.correctAnswer) {
+      feedbackElement.textContent = "Correct!";
       score++;
+    } else {
+      feedbackElement.textContent = `Wrong! The correct answer was ${currentQuestion.options[currentQuestion.correctAnswer]}.`;
     }
 
     currentQuestionIndex++;
 
     if (currentQuestionIndex < questions.length) {
-      displayQuestion();
+      setTimeout(displayQuestion, 1000); // Show next question after a brief pause
     } else {
-      endQuiz();
+      setTimeout(endQuiz, 1000); // End the quiz after the last question
     }
   }
 
   function endQuiz() {
     quizContainer.style.display = "none";
     finalScoreContainer.style.display = "block";
-    finalScoreElement.textContent = `You scored ${score} out of ${questions.length}`;
+    finalScoreElement.textContent = `${score} out of ${questions.length}`;
     restartButton.style.display = "block";
   }
 
   function restartQuiz() {
-    score = 0;
-    currentQuestionIndex = 0;
     finalScoreContainer.style.display = "none";
     restartButton.style.display = "none";
     startQuiz();
