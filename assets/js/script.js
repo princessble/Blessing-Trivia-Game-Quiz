@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const finalScoreContainer = document.getElementById("final-score-container");
   const finalScoreValue = document.getElementById("finalScore-value");
   const restartButton = document.getElementById("restart-button");
+  const feedbackElement = document.createElement("p");
 
   let currentQuestionIndex = 0;
   let score = 0;
@@ -91,20 +92,28 @@ document.addEventListener("DOMContentLoaded", () => {
     while (optionsElement.firstChild) {
       optionsElement.removeChild(optionsElement.firstChild);
     }
+    feedbackElement.textContent = "";
+    feedbackElement.className = "";
+    quizContainer.appendChild(feedbackElement);
   }
 
   function selectAnswer(selectedIndex) {
     const correctAnswer = questions[currentQuestionIndex].correctAnswer;
     if (selectedIndex === correctAnswer) {
       score++;
+      feedbackElement.textContent = "Correct!";
+      feedbackElement.className = "correct-feedback";
+    } else {
+      feedbackElement.textContent = `Incorrect! The correct answer was: ${questions[currentQuestionIndex].options[correctAnswer]}`;
+      feedbackElement.className = "incorrect-feedback";
     }
 
     currentQuestionIndex++;
 
     if (currentQuestionIndex < questions.length) {
-      showQuestion();
+      setTimeout(showQuestion, 1000);
     } else {
-      showFinalScore();
+      setTimeout(showFinalScore, 1000);
     }
   }
 
