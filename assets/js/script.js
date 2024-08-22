@@ -1,121 +1,127 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const usernameContainer = document.getElementById("username-container");
+document.addEventListener("DOMContentLoaded", () => {
   const startButton = document.getElementById("start-button");
+  const usernameContainer = document.getElementById("username-container");
   const quizContainer = document.getElementById("quiz-container");
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
-  const finalScoreElementContainer = document.getElementById("final-score-container");
-  const finalScoreElement = document.getElementById("finalScore-value");
+  const finalScoreContainer = document.getElementById("final-score-container");
+  const finalScoreValue = document.getElementById("finalScore-value");
   const restartButton = document.getElementById("restart-button");
 
   let currentQuestionIndex = 0;
   let score = 0;
 
   const questions = [{
-      question: "1. What is the capital of France?",
+      question: "What is the capital of France?",
       options: ["Paris", "London", "Berlin", "Madrid"],
-      correctAnswer: 0,
+      correctAnswer: 0
     },
     {
-      question: "2. Which planet is known as the 'Red Planet'?",
+      question: "Which planet is known as the 'Red Planet'?",
       options: ["Venus", "Mars", "Jupiter", "Saturn"],
       correctAnswer: 1
     },
     {
-      question: "3. Who wrote 'Romeo and Juliet'?",
-      options: ["William Shakespeare", "George Orwell", "Charles Dickens", "Jane Austen"],
+      question: "Who wrote 'To Kill a Mockingbird'?",
+      options: ["Harper Lee", "Jane Austen", "Mark Twain", "Ernest Hemingway"],
       correctAnswer: 0
     },
     {
-      question: "4. What is the largest ocean on Earth?",
-      options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+      question: "What is the largest ocean?",
+      options: ["Atlantic", "Indian", "Pacific", "Arctic"],
       correctAnswer: 2
     },
     {
-      question: "5. What is the chemical symbol for water?",
-      options: ["H2O", "O2", "CO2", "NaCl"],
+      question: "What is the chemical symbol for gold?",
+      options: ["Au", "Ag", "G", "Go"],
       correctAnswer: 0
     },
     {
-      question: "6. Who painted the Mona Lisa?",
-      options: ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Claude Monet"],
-      correctAnswer: 0
+      question: "Which artist painted the Mona Lisa?",
+      options: ["Van Gogh", "Picasso", "Da Vinci", "Michelangelo"],
+      correctAnswer: 2
     },
     {
-      question: "7. What is the smallest country in the world?",
-      options: ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
+      question: "Which planet is closest to the sun?",
+      options: ["Earth", "Mars", "Venus", "Mercury"],
+      correctAnswer: 3
+    },
+    {
+      question: "What is the largest mammal?",
+      options: ["Elephant", "Blue Whale", "Giraffe", "Lion"],
       correctAnswer: 1
     },
     {
-      question: "8. Which element has the atomic number 1?",
-      options: ["Helium", "Oxygen", "Hydrogen", "Carbon"],
-      correctAnswer: 2
+      question: "Who was the first President of the United States?",
+      options: ["Thomas Jefferson", "George Washington", "John Adams", "James Madison"],
+      correctAnswer: 1
     },
     {
-      question: "9. What is the hardest natural substance on Earth?",
-      options: ["Gold", "Iron", "Diamond", "Quartz"],
-      correctAnswer: 2
-    },
-    {
-      question: "10. Which planet is closest to the sun?",
-      options: ["Venus", "Earth", "Mercury", "Mars"],
-      correctAnswer: 2
+      question: "Which country is known as the 'Land of the Rising Sun'?",
+      options: ["China", "Japan", "South Korea", "Thailand"],
+      correctAnswer: 1
     }
   ];
 
   function startQuiz() {
     const username = document.getElementById("username").value;
     if (username.trim() !== "") {
-      usernameContainer.style.display = "none";
+      usernameContainer.classList.add("hide");
       quizContainer.classList.remove("hide");
-      displayQuestion();
+      showQuestion();
     } else {
-      alert("Please enter a valid username.");
+      alert("Please enter your username.");
     }
   }
 
-  function displayQuestion() {
+  function showQuestion() {
+    resetState();
     const currentQuestion = questions[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
-    optionsElement.innerHTML = "";
 
     currentQuestion.options.forEach((option, index) => {
       const button = document.createElement("button");
       button.textContent = option;
-      button.addEventListener("click", () => checkAnswer(index));
+      button.addEventListener("click", () => selectAnswer(index));
       optionsElement.appendChild(button);
     });
   }
 
-  function checkAnswer(selectedIndex) {
-    const currentQuestion = questions[currentQuestionIndex];
-    if (selectedIndex === currentQuestion.correctAnswer) {
+  function resetState() {
+    while (optionsElement.firstChild) {
+      optionsElement.removeChild(optionsElement.firstChild);
+    }
+  }
+
+  function selectAnswer(selectedIndex) {
+    const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+    if (selectedIndex === correctAnswer) {
       score++;
     }
 
     currentQuestionIndex++;
 
     if (currentQuestionIndex < questions.length) {
-      displayQuestion();
+      showQuestion();
     } else {
-      endQuiz();
+      showFinalScore();
     }
   }
 
-  function endQuiz() {
-    questionElement.textContent = "Quiz Completed!";
-    optionsElement.innerHTML = "";
-    finalScoreElementContainer.classList.remove("hide");
-    finalScoreElement.textContent = `${score}/${questions.length}`;
+  function showFinalScore() {
+    quizContainer.classList.add("hide");
+    finalScoreContainer.classList.remove("hide");
+    finalScoreValue.textContent = `${score} out of ${questions.length}`;
     restartButton.classList.remove("hide");
   }
 
   function restartQuiz() {
     score = 0;
     currentQuestionIndex = 0;
-    finalScoreElementContainer.classList.add("hide");
+    finalScoreContainer.classList.add("hide");
     restartButton.classList.add("hide");
-    displayQuestion();
+    quizContainer.classList.remove("hide");
+    showQuestion();
   }
 
   startButton.addEventListener("click", startQuiz);
