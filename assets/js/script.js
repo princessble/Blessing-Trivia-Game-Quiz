@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function endQuiz() {
     quizContainer.style.display = "none";
     finalScoreContainer.style.display = "block";
-    finalScoreElement.textContent = `${score} out of ${questions.length}`;
+    finalScoreElement.textContent = `You scored ${score} out of ${questions.length}`;
     restartButton.style.display = "block";
   }
 
