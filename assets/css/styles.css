@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-/* Set body background color to red */
+/* Body styling */
 body {
     background-color: #8B0000;
     /* Dark red background */
@@ -17,21 +17,22 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 10px;
+    text-align: center;
 }
 
-/* Main container styling */
+/* Main container */
 .container {
-    width: 90%;
-    max-width: 600px;
     background-color: #b22222;
     /* Firebrick red for the container */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    width: 100%;
+    max-width: 600px;
 }
 
-/* Header title styling */
+/* Header title */
 h1 {
     margin-bottom: 20px;
     font-size: 2em;
@@ -39,19 +40,18 @@ h1 {
     /* Light red for the header text */
 }
 
-/* Username input styling */
+/* Username input */
 #username-container input[type="text"] {
-    width: 80%;
+    width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-radius: 5px;
     border: none;
     font-size: 1em;
 }
 
-/* Start button styling */
-#username-container button,
-#restart-button {
+/* Buttons styling */
+button {
     background-color: #ff6347;
     /* Tomato red for buttons */
     color: #fff;
@@ -61,52 +61,39 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
-#username-container button:hover,
-#restart-button:hover {
+button:hover {
     background-color: #ff4500;
     /* Darker red on hover */
 }
 
-/* Hide elements by default */
-.hide {
-    display: none;
+/* Question and options */
+#question-container {
+    margin-bottom: 20px;
 }
 
-/* Question display styling */
 #question {
-    margin: 20px 0;
     font-size: 1.5em;
+    margin-bottom: 20px;
     color: #ffe4e1;
     /* Light pink for question text */
 }
 
-/* Option buttons styling */
 #options button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #ff7f50;
-    /* Coral color for options */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#options button:hover {
-    background-color: #ff4500;
-    /* Darker red on hover */
+    margin-bottom: 10px;
 }
 
 /* Final score styling */
 #final-score-container {
+    margin-bottom: 20px;
     font-size: 1.2em;
-    margin-top: 20px;
+}
+
+/* Hide class to manage visibility */
+.hide {
+    display: none;
 }
 
 /* Media queries for responsiveness */
@@ -116,8 +103,7 @@ h1 {
     }
 
     #username-container input[type="text"],
-    #username-container button,
-    #options button {
+    button {
         font-size: 0.9em;
         padding: 8px;
     }
