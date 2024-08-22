@@ -7,104 +7,167 @@
     box-sizing: border-box;
 }
 
-/* Body styling */
+/* Main body styling */
 body {
-    background-color: #8B0000;
-    /* Dark red background */
-    color: #fff;
     font-family: Arial, sans-serif;
+    background-color: #b03c3c;
+    /* Red background */
+    color: #ffffff;
+    /* White text */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 10px;
+    margin: 0;
+}
+
+/* Container for the entire quiz */
+.container {
+    width: 90%;
+    max-width: 600px;
+    background-color: #ff4c4c;
+    /* Lighter red for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
-/* Main container */
-.container {
-    background-color: #b22222;
-    /* Firebrick red for the container */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 600px;
-}
-
-/* Header title */
-h1 {
-    margin-bottom: 20px;
+/* Header styling */
+header h1 {
     font-size: 2em;
-    color: #ffcccb;
-    /* Light red for the header text */
+    margin-bottom: 20px;
 }
 
-/* Username input */
-#username-container input[type="text"] {
-    width: 100%;
+/* Styling for the username container */
+#username-container {
+    margin-bottom: 20px;
+}
+
+#username {
     padding: 10px;
-    margin-bottom: 20px;
+    width: 80%;
+    max-width: 300px;
     border-radius: 5px;
     border: none;
+    margin-bottom: 10px;
     font-size: 1em;
 }
 
-/* Buttons styling */
-button {
-    background-color: #ff6347;
-    /* Tomato red for buttons */
-    color: #fff;
-    border: none;
+#start-button {
     padding: 10px 20px;
-    font-size: 1em;
+    background-color: #ffffff;
+    color: #b03c3c;
+    border: none;
     border-radius: 5px;
+    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #ff4500;
-    /* Darker red on hover */
+#start-button:hover {
+    background-color: #ffcccc;
+    /* Lighter shade of red */
 }
 
-/* Question and options */
-#question-container {
-    margin-bottom: 20px;
+/* Quiz container */
+#quiz-container {
+    display: none;
 }
 
 #question {
     font-size: 1.5em;
     margin-bottom: 20px;
-    color: #ffe4e1;
-    /* Light pink for question text */
 }
 
 #options button {
-    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    color: #b03c3c;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Final score styling */
+#options button:hover {
+    background-color: #ffcccc;
+    /* Lighter shade of red */
+}
+
+.correct-feedback {
+    color: #00ff00;
+    /* Green for correct */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.incorrect-feedback {
+    color: #ff0000;
+    /* Red for incorrect */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Final score container */
 #final-score-container {
-    margin-bottom: 20px;
-    font-size: 1.2em;
-}
-
-/* Hide class to manage visibility */
-.hide {
     display: none;
+    font-size: 1.5em;
+    margin-top: 20px;
 }
 
-/* Media queries for responsiveness */
-@media screen and (max-width: 500px) {
-    h1 {
+#restart-button {
+    display: none;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #b03c3c;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#restart-button:hover {
+    background-color: #ffcccc;
+    /* Lighter shade of red */
+}
+
+/* Footer styling */
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 480px) {
+    header h1 {
         font-size: 1.5em;
     }
 
-    #username-container input[type="text"],
-    button {
+    #question {
+        font-size: 1.2em;
+    }
+
+    #options button {
         font-size: 0.9em;
         padding: 8px;
+    }
+
+    #username {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    #start-button,
+    #restart-button {
+        font-size: 0.9em;
+        padding: 8px 16px;
     }
 }
