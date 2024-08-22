@@ -7,34 +7,38 @@
   <meta name="author" content="Blessing Fortune Nzeh">
   <meta name="keywords" content="trivia game, quiz, Blessing Trivia Game Quiz">
   <meta name="description"
-    content="Welcome to the Blessing Trivia Game Quiz repository. Explore and enjoy this exciting trivia game, brought to you by Blessing Fortune Nzeh. Test your knowledge and have fun!">
+    content="Welcome to the Blessing Trivia Game Quiz repository. Test your knowledge and have fun!">
   <title>Blessing Trivia Quiz</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <div class="container">
-    <div id="username-container">
+    <header>
       <h1>Blessing Trivia Quiz Game</h1>
+    </header>
+
+    <div id="username-container">
       <input type="text" id="username" placeholder="Enter your username">
       <button id="start-button">Start Quiz</button>
     </div>
 
     <div id="quiz-container" class="hide">
-      <div id="question-container">
-        <div id="question"></div>
-        <div id="options"></div>
-      </div>
-
+      <div id="question"></div>
+      <div id="options"></div>
+      <div id="feedback" class="hide"></div>
       <div id="final-score-container" class="hide">
-        <p>Your final score is: <span id="finalScore-value"></span></p>
+        <p>Your final score is: <span id="final-score"></span></p>
       </div>
-
       <button id="restart-button" class="hide">Restart Quiz</button>
     </div>
+
+    <footer>
+      <p>&copy; 2023 Blessing Trivia Quiz Game</p>
+    </footer>
   </div>
 
-  <script src="assets/js/script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
